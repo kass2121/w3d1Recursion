@@ -174,3 +174,68 @@ function printReverseList(list) {
 }
 
 printReverseList(list);
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//part_II
+/**
+ *  body: null
+    div: null
+    label: Name
+    input: this was typed by a user
+    p: This is text in the a paragrap
+ */
+/* let node1 = {
+    body: null,
+    div: null,
+    label: "Name",
+    input: "this was typed by a user",
+    p: "This is text in the a paragrap"
+
+};
+recursionPrintName(node1);
+//console.log(Object.keys(node1).length);
+// iterative version
+
+function iterativePrintName(node1) {
+    for (let key in node1) {
+        console.log(`${ key }: ${ node1[key] }`);
+
+    }
+}
+iterativePrintName(node1); */
+//-----------------------------------------
+let node3 = {
+    name: "p",
+    value: "This is text in the a paragraph",
+    children: null
+};
+let node4 = {
+    name: "label",
+    value: "Name",
+    children: null
+};
+let node5 = {
+    name: "input",
+    value: "this was typed by a user",
+    children: null
+};
+let node2 = {
+    name: "div",
+    value: null,
+    children: [node4, node5]
+};
+let node1 = {
+    name: "body",
+    children: [node2, node3],
+    value: null,
+};
+//recursion version
+function recursionPrintName(node1) {
+    console.log(node1.name + ":" + node1.value);
+    if (node1.children && node1.children.length > 0) {
+        node1.children.forEach(function(child) {
+            recursionPrintName(child);
+
+        });
+    }
+}
+recursionPrintName(node1);
